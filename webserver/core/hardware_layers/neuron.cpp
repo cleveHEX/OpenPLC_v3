@@ -104,7 +104,7 @@ void searchForIO()
     log(log_msg);
     
     /* look for digital inputs */
-    strcpy(path_fmt, "/sys/devices/platform/unipi_plc/io_group%d/di_%d_%02d/di_value");
+    strcpy(path_fmt, "/run/unipi-plc/by-sys/DI%d.%02d/value");
     int index = 0;
     for (int group = 1; group < 10; group++)
     {
@@ -126,7 +126,7 @@ void searchForIO()
     }
 
     /* look for digital outputs */
-    strcpy(path_fmt, "/sys/devices/platform/unipi_plc/io_group%d/do_%d_%02d/do_value");
+    strcpy(path_fmt, "/run/unipi-plc/by-sys/DO%d.%02d/value");
     index = 0;
     for (int group = 1; group < 10; group++)
     {
@@ -148,7 +148,7 @@ void searchForIO()
     }
 
     /* look for digital outputs (relay) */
-    strcpy(path_fmt, "/sys/devices/platform/unipi_plc/io_group%d/ro_%d_%02d/ro_value");
+    strcpy(path_fmt, "/run/unipi-plc/by-sys/RO%d.%02d/value");
     for (int group = 1; group < 10; group++)
     {
         for (int major = 1; major < 10; major++)
@@ -188,7 +188,7 @@ void searchForIO()
     }
 
     /* look for analog inputs */
-    strcpy(path_fmt, "/sys/devices/platform/unipi_plc/io_group%d/ai_%d_%d/in_voltage0_raw");
+    strcpy(path_fmt, "/run/unipi-plc/by-sys/AI%d.%d/in_voltage_raw");
     index = 0;
     for (int group = 1; group < 10; group++)
     {
@@ -210,7 +210,7 @@ void searchForIO()
     }
     
     /* look for analog outputs */
-    strcpy(path_fmt, "/sys/devices/platform/unipi_plc/io_group%d/ao_%d_%d/out_voltage0_raw");
+    strcpy(path_fmt, "/run/unipi-plc/by-sys/AO%d.%d/out_voltage_raw");
     index = 0;
     for (int group = 1; group < 10; group++)
     {
